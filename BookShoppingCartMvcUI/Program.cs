@@ -16,7 +16,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.Sign
     .AddDefaultTokenProviders();
 
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddTransient<IHomeRepository, HomeRepository>();
 var app = builder.Build();
 
 //using(var scope = app.Services.CreateScope())
@@ -48,5 +48,5 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
-
+//DbSeeder.Seed(app);
 app.Run();
