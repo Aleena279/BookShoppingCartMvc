@@ -39,7 +39,7 @@ namespace BookShoppingCartMvcUI.Repositories
                 var cartItem=_db.CartDetails.FirstOrDefault(a=>a.ShoppingCartId==cart.Id && a.BookId==bookId);
                 if (cartItem != null)
                 {
-                    cartItem.Quantity = qty;    
+                    cartItem.Quantity += qty;    
                 }
                 else
                 {
@@ -125,9 +125,11 @@ namespace BookShoppingCartMvcUI.Repositories
 
             var shoppingCart = await _db.ShoppingCarts
                                 .Include(a => a.CartDetails)
-                                .ThenInclude(a => a.Book)
-                                .ThenInclude(a => a.Genre)
-                                .Where(a => a.UserId == userId).FirstOrDefaultAsync();
+                                .ThenInclude(b => b.Book)
+                                .ThenInclude(c=>c.Genre)
+                                .FirstOrDefaultAsync(sc => sc.UserId == userId);
+
+
 
             return shoppingCart;
         }

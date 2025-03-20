@@ -15,10 +15,10 @@ namespace BookShoppingCartMvcUI.Models
         public String ?AuthorName { get; set; }
         [Required]
         public double Price { get; set; }
-        public string Image { get; set; }
+        public string?Image { get; set; }
         [Required]
         public int GenreId { get; set; }
-        public Genre Genre;
+        public virtual Genre Genre { get; set; }
         public List<OrderDetail> OrderDetail{ get; set; }
         public List<CartDetail> CartDetail { get; set; }
         [NotMapped]

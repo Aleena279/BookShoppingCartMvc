@@ -69,7 +69,7 @@
                       
                       
                       try {
-                           var response = await fetch(`/cart/AddItem?bookId=${bookId}`);
+                           var response = await fetch(`/Cart/AddItem?bookId=${bookId}`);
                            if(response.status==200){
                                var result = await response.json();
                                

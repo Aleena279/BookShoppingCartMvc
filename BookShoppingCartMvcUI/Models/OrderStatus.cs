@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BookShoppingCartMvcUI.Models
 {
+    [Table("OrderStatus")]
     public class OrderStatus
     {
         public int Id { get; set; }
@@ -10,7 +12,7 @@ namespace BookShoppingCartMvcUI.Models
 
         [MaxLength(20)]
         [Required]
-        public string? StatusName { get; set; }
+        public string ?StatusName { get; set; }
         
     }
 }
