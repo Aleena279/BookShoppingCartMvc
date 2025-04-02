@@ -17,7 +17,9 @@ namespace BookShoppingCartMvcUI.Data
         public DbSet<Order> Orders{ get; set; }
         public DbSet<OrderStatus> OrderStatuses { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
-     
+        public DbSet<Stock> Stocks { get; set; }
+
+
 
     }
 }
