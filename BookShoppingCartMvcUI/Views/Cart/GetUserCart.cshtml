@@ -22,7 +22,16 @@
             {
                 <tr>
                     <td>@item.Book.BookName</td>
-                   <td><img src="/Images/@item.Book.Image" style="width:80px;height:100px"/></td>
+                    <td>
+                        @if (string.IsNullOrEmpty(item.Book.Image))
+                        {
+                            <img src="/images/NoImage.jpg" style="width:80px;height:100px" />
+                        }
+                        else
+                        {
+                            <img src="/images/@item.Book.Image" style="width:80px;height:100px" />
+                        }
+                    </td>
                  <td>@item.Book.Genre.GenreName</td>
                 <td>@item.Book.Price X @item.Quantity</td>
                     <td>@(item.Book.Price*@item.Quantity)</td>
