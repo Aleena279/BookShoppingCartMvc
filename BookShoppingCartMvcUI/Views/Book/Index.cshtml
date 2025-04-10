@@ -1,5 +1,7 @@
 ﻿@model IEnumerable<Book>
-
+@{
+    Layout = "_AdminLayout";
+}
     <h2>Books</h2>
     <a asp-action="AddBook" asp-controller="Book" 
     class="btn btn-primary">Add More</a>

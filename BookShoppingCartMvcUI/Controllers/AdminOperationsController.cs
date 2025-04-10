@@ -103,7 +103,10 @@ public class AdminOperationsController : Controller
 
         }
 
-
+    public IActionResult Dashboard()
+    {
+        return View();
+    }
 
     }
 
